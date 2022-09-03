@@ -15,11 +15,7 @@ class Container {
                     contentExtratedFromArray = element
                 }
             });
-            if(contentExtratedFromArray !== undefined){
-                return contentExtratedFromArray
-            }else{
-                return null
-            }
+            return contentExtratedFromArray
         }catch(err){
             console.log(err)
         }
@@ -58,10 +54,7 @@ const server = app.listen(PORT, () => {
     });
 
     app.get("/productosRandom", (req, resp) => {
-        const random = Math.round((Math.random()*10+1));
-        if (random > 10){
-            random = random - 1
-        }  
+        let random = Math.floor(Math.random()*10)+1;
         container.GetById(random).then(result =>
         resp.send(`<div>        
         <p style='color:blue'>El número random es ${random}</p>
