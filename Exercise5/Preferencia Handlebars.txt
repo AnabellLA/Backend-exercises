@@ -1,0 +1,2 @@
+Los 3 motores funcionan y son fáciles de entender; sin embargo, Handlebars tiene una sintaxis más similar a HTML
+además de que su estructura permite ser más ordenado lo que lo hace mucho más sencillo de utilizar al momento de programar.
