@@ -1,0 +1,2 @@
+Los 3 motores funcionan y son fáciles de entender; sin embargo, Pug tiene una sintaxis más sencilla y, por tanto,
+su uso no tiene mayor complejidad.
