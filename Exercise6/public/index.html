@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Entregable 5</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+            crossorigin="anonymous"
+        />
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="js/main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    </head>
+    <body>
+        <!--Formulario para ingresar productos-->      
+        <h1 class="row justify-content-center m-5">Añadir un producto</h1>
+        <hr class="col-3 col-md-2 mb-5 offset-md-3" />
+        <div class="row justify-content-center m-5">
+            <form class="col-5 mb-3" onsubmit="return addProduct(this)">
+                <input type="text" id="title" placeholder="ingrese el nombre" />
+                <input type="number" id="price" placeholder="ingrese el precio" />
+                <input type="text" id="thumbnail" placeholder="ingrese miniatura" />
+                <input type="submit" value="Enviar" />
+            </form>
+            <div id="productos"></div>
+        </div>
+
+
+        <!--Centro de mensajes-->      
+        <h1 class="row justify-content-center m-5">Centro de mensajes</h1>
+        <hr class="col-3 col-md-2 mb-5 offset-md-3" />
+        <div class="row justify-content-center m-5">
+            <form class="col-5 mb-3" onsubmit="return addMessage(this)">
+                <input type="text" id="email" placeholder="Tu Correo" />
+                <input type="text" id="message" placeholder="Cuéntanos algo..." />
+                <input type="submit" value="Enviar" />
+            </form>
+            <div id="mensajes"></div>  
+        </div>
+    </body>
+</html>
