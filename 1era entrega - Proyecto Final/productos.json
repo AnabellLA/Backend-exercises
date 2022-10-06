@@ -1,0 +1,102 @@
+[
+  {
+    "nombre": "Monster - Volumen 1",
+    "descripcion": "Volumen número 1 del manga Monster",
+    "codigo": "MONV1",
+    "url": "https://res.cloudinary.com/mangastore/image/upload/v1658885585/Monster-V1_jids00.jpg",
+    "precio": 150,
+    "stock": 200,
+    "timeStamp": 1664919373833,
+    "id": 1
+  },
+  {
+    "nombre": "Monster - Volumen 2",
+    "descripcion": "Volumen número 2 del manga Monster",
+    "codigo": "MONV2",
+    "url": "https://res.cloudinary.com/mangastore/image/upload/v1658886228/Monster-V2_jsawtw.jpg",
+    "precio": 110,
+    "stock": 120,
+    "timeStamp": 1664919389673,
+    "id": 2
+  },
+  {
+    "nombre": "Monster - Volumen 3",
+    "descripcion": "Volumen número 3 del manga Monster",
+    "codigo": "MONV3",
+    "url": "https://res.cloudinary.com/mangastore/image/upload/v1658886320/Monster-V3_jra3qf.jpg",
+    "precio": 110,
+    "stock": 90,
+    "timeStamp": 1664919399388,
+    "id": 3
+  },
+  {
+    "nombre": "Monster - Volumen 4",
+    "descripcion": "Volumen número 4 del manga Monster",
+    "codigo": "MONV4",
+    "url": "https://res.cloudinary.com/mangastore/image/upload/v1658886699/Monster-V4_mge9bp.jpg",
+    "precio": 110,
+    "stock": 60,
+    "timeStamp": 1664919410668,
+    "id": 4
+  },
+  {
+    "nombre": "Monster - Volumen 5",
+    "descripcion": "Volumen número 5 del manga Monster",
+    "codigo": "MONV5",
+    "url": "https://res.cloudinary.com/mangastore/image/upload/v1658886701/Monster-V5_bafxpv.jpg",
+    "precio": 110,
+    "stock": 50,
+    "timeStamp": 1664919419854,
+    "id": 5
+  },
+  {
+    "nombre": "Monster - Volumen 6",
+    "descripcion": "Volumen número 6 del manga Monster",
+    "codigo": "MONV6",
+    "url": "https://res.cloudinary.com/mangastore/image/upload/v1658887748/Monster-V6_jofcyu.jpg",
+    "precio": 110,
+    "stock": 34,
+    "timeStamp": 1664919545497,
+    "id": 6
+  },
+  {
+    "nombre": "Monster - Volumen 7",
+    "descripcion": "Volumen número 7 del manga Monster",
+    "codigo": "MONV7",
+    "url": "https://res.cloudinary.com/mangastore/image/upload/v1658887749/Monster-V7_smusys.jpg",
+    "precio": 110,
+    "stock": 100,
+    "timeStamp": 1664919546295,
+    "id": 7
+  },
+  {
+    "nombre": "Monster - Volumen 8",
+    "descripcion": "Volumen número 8 del manga Monster",
+    "codigo": "MONV8",
+    "url": "https://res.cloudinary.com/mangastore/image/upload/v1658887750/Monster-V8_hepruo.jpg",
+    "precio": 110,
+    "stock": 92,
+    "timeStamp": 1664919547013,
+    "id": 8
+  },
+  {
+    "nombre": "Monster - Volumen 9",
+    "descripcion": "Volumen número 9 del manga Monster",
+    "codigo": "MONV9",
+    "url": "https://res.cloudinary.com/mangastore/image/upload/v1658887752/Monster-V9_m3lbqs.jpg",
+    "precio": 110,
+    "stock": 75,
+    "timeStamp": 1664919547727,
+    "id": 9
+  },
+  {
+    "nombre": "Akira - Volumen 1",
+    "descripcion": "Volumen número 1 del manga Akira",
+    "codigo": "AKV1",
+    "url": "https://res.cloudinary.com/mangastore/image/upload/v1658889516/Akira-V1_uc1lfy.jpg",
+    "precio": 150,
+    "stock": 220,
+    "timeStamp": 1664919548309,
+    "id": 10
+  }
+]
