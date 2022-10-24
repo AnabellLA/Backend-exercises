@@ -1,0 +1,486 @@
+Microsoft Windows [Versión 10.0.22000.1098]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+C:\Users\ana98>mongosh
+Current Mongosh Log ID: 6356fd48bbdb3841632ba2fd
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.0
+Using MongoDB:          6.0.2
+Using Mongosh:          1.6.0
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2022-10-24T13:04:19.426-05:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+------
+   Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+   metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+   The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+   and anyone you share the URL with. MongoDB may use this information to make product
+   improvements and to suggest MongoDB products and deployment options to you.
+
+   To enable free monitoring, run the following command: db.enableFreeMonitoring()
+   To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+------
+
+test> use ecommerce
+switched to db ecommerce
+ecommerce> db.createCollection('mensajes')
+{ ok: 1 }
+ecommerce> db.createCollection('productos')
+{ ok: 1 }
+ecommerce> db.productos.insertMany([{id: 1, title: 'Chihayafuru V1', price: 120, thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V1_ngqiea.jpg'}, {id: 2, title: 'Chihayafuru V2', price: 110, thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V2_p1t63f.jpg'}, {id: 3, title: 'Chihayafuru V3',price: 130, thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V3_nb10yj.jpg'}, {id: 4, title: 'Chihayafuru V4', price: 140, thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1660682639/CHIHAYAFURU-V4_inljuh.jpg'}, {id: 5, title: 'Chihayafuru V5', price: 110, thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V2_p1t63f.jpg'}, {id: 6, title: 'Chihayafuru V6',price: 120, thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V3_nb10yj.jpg'}, {id: 7, title: 'Chihayafuru V7', price: 110, thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1660682639/CHIHAYAFURU-V4_inljuh.jpg'}, {id: 8, title: 'Chihayafuru V8', price: 100, thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V2_p1t63f.jpg'}, {id: 9, title: 'Chihayafuru V9',price: 150, thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V3_nb10yj.jpg'}, {id: 10, title: 'Chihayafuru V10', price: 170, thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1660682639/CHIHAYAFURU-V4_inljuh.jpg'}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("635702dad4da9b3d06667c11"),
+    '1': ObjectId("635702dad4da9b3d06667c12"),
+    '2': ObjectId("635702dad4da9b3d06667c13"),
+    '3': ObjectId("635702dad4da9b3d06667c14"),
+    '4': ObjectId("635702dad4da9b3d06667c15"),
+    '5': ObjectId("635702dad4da9b3d06667c16"),
+    '6': ObjectId("635702dad4da9b3d06667c17"),
+    '7': ObjectId("635702dad4da9b3d06667c18"),
+    '8': ObjectId("635702dad4da9b3d06667c19"),
+    '9': ObjectId("635702dad4da9b3d06667c1a")
+  }
+}
+ecommerce> db.mensajes.insertMany([{author: 'Juan.lopez@gmail.com',date: '13/08/2021 00:00:00',text: 'Hola que tal'}, {author: 'Maria.perez@outlook.com',date: '20/09/2021 01:00:00',text: 'Bien y vos?'}, {author: 'Ronald.quispe@hotmail.com',date: '16/10/2021 02:00:00',text: 'Me alegra'}, {author: 'Carlos.lazo@outlook.com',date: '23/11/2021 03:00:00',text: 'Cómo están?'}, {author: 'Andrea.leon@hotmail.com',date: '06/12/2021 04:00:00',text: 'Ya llegaron?'}, {author: 'Gonzalo.llanto@gmail.com',date: '04/01/2021 05:00:00',text: 'Siguen conectados'}, {author: 'Fernanda.ruiz@outlook.com',date: '11/02/2021 06:00:00',text: 'Los quiero ver'}, {author: 'Carla.llanos@hotmail.com',date: '12/03/2021 07:00:00',text: 'Me alegra ver que siguen bien'}, {author: 'Pia.toro@outlook.com',date: '03/04/2021 08:00:00',text: 'Quien quiere comprar algo'}, {author: 'Pedro.cerda@hotmail.com',date: '10/05/2021 09:00:00',text: 'Me interesa el manga'}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("635704c7d4da9b3d06667c1b"),
+    '1': ObjectId("635704c7d4da9b3d06667c1c"),
+    '2': ObjectId("635704c7d4da9b3d06667c1d"),
+    '3': ObjectId("635704c7d4da9b3d06667c1e"),
+    '4': ObjectId("635704c7d4da9b3d06667c1f"),
+    '5': ObjectId("635704c7d4da9b3d06667c20"),
+    '6': ObjectId("635704c7d4da9b3d06667c21"),
+    '7': ObjectId("635704c7d4da9b3d06667c22"),
+    '8': ObjectId("635704c7d4da9b3d06667c23"),
+    '9': ObjectId("635704c7d4da9b3d06667c24")
+  }
+}
+ecommerce> db.productos.deleteMany({})
+{ acknowledged: true, deletedCount: 10 }
+ecommerce> db.productos.insertMany([{id: 1, title: 'Chihayafuru V1', price: 520, thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V1_ngqiea.jpg'}, {id: 2, title: 'Chihayafuru V2', price: 810, thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V2_p1t63f.jpg'}, {id: 3, title: 'Chihayafuru V3',price: 1130, thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V3_nb10yj.jpg'}, {id: 4, title: 'Chihayafuru V4', price: 2440, thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1660682639/CHIHAYAFURU-V4_inljuh.jpg'}, {id: 5, title: 'Chihayafuru V5', price: 3110, thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V2_p1t63f.jpg'}, {id: 6, title: 'Chihayafuru V6',price: 1220, thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V3_nb10yj.jpg'}, {id: 7, title: 'Chihayafuru V7', price: 2110, thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1660682639/CHIHAYAFURU-V4_inljuh.jpg'}, {id: 8, title: 'Chihayafuru V8', price: 3800, thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V2_p1t63f.jpg'}, {id: 9, title: 'Chihayafuru V9',price: 4950, thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V3_nb10yj.jpg'}, {id: 10, title: 'Chihayafuru V10', price: 4670, thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1660682639/CHIHAYAFURU-V4_inljuh.jpg'}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("63570863d4da9b3d06667c25"),
+    '1': ObjectId("63570863d4da9b3d06667c26"),
+    '2': ObjectId("63570863d4da9b3d06667c27"),
+    '3': ObjectId("63570863d4da9b3d06667c28"),
+    '4': ObjectId("63570863d4da9b3d06667c29"),
+    '5': ObjectId("63570863d4da9b3d06667c2a"),
+    '6': ObjectId("63570863d4da9b3d06667c2b"),
+    '7': ObjectId("63570863d4da9b3d06667c2c"),
+    '8': ObjectId("63570863d4da9b3d06667c2d"),
+    '9': ObjectId("63570863d4da9b3d06667c2e")
+  }
+}
+ecommerce> db.productos.find()
+[
+  {
+    _id: ObjectId("63570863d4da9b3d06667c25"),
+    id: 1,
+    title: 'Chihayafuru V1',
+    price: 520,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V1_ngqiea.jpg'
+  },
+  {
+    _id: ObjectId("63570863d4da9b3d06667c26"),
+    id: 2,
+    title: 'Chihayafuru V2',
+    price: 810,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V2_p1t63f.jpg'
+  },
+  {
+    _id: ObjectId("63570863d4da9b3d06667c27"),
+    id: 3,
+    title: 'Chihayafuru V3',
+    price: 1130,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V3_nb10yj.jpg'
+  },
+  {
+    _id: ObjectId("63570863d4da9b3d06667c28"),
+    id: 4,
+    title: 'Chihayafuru V4',
+    price: 2440,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1660682639/CHIHAYAFURU-V4_inljuh.jpg'
+  },
+  {
+    _id: ObjectId("63570863d4da9b3d06667c29"),
+    id: 5,
+    title: 'Chihayafuru V5',
+    price: 3110,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V2_p1t63f.jpg'
+  },
+  {
+    _id: ObjectId("63570863d4da9b3d06667c2a"),
+    id: 6,
+    title: 'Chihayafuru V6',
+    price: 1220,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V3_nb10yj.jpg'
+  },
+  {
+    _id: ObjectId("63570863d4da9b3d06667c2b"),
+    id: 7,
+    title: 'Chihayafuru V7',
+    price: 2110,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1660682639/CHIHAYAFURU-V4_inljuh.jpg'
+  },
+  {
+    _id: ObjectId("63570863d4da9b3d06667c2c"),
+    id: 8,
+    title: 'Chihayafuru V8',
+    price: 3800,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V2_p1t63f.jpg'
+  },
+  {
+    _id: ObjectId("63570863d4da9b3d06667c2d"),
+    id: 9,
+    title: 'Chihayafuru V9',
+    price: 4950,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V3_nb10yj.jpg'
+  },
+  {
+    _id: ObjectId("63570863d4da9b3d06667c2e"),
+    id: 10,
+    title: 'Chihayafuru V10',
+    price: 4670,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1660682639/CHIHAYAFURU-V4_inljuh.jpg'
+  }
+]
+ecommerce> db.mensajes.find()
+[
+  {
+    _id: ObjectId("635704c7d4da9b3d06667c1b"),
+    author: 'Juan.lopez@gmail.com',
+    date: '13/08/2021 00:00:00',
+    text: 'Hola que tal'
+  },
+  {
+    _id: ObjectId("635704c7d4da9b3d06667c1c"),
+    author: 'Maria.perez@outlook.com',
+    date: '20/09/2021 01:00:00',
+    text: 'Bien y vos?'
+  },
+  {
+    _id: ObjectId("635704c7d4da9b3d06667c1d"),
+    author: 'Ronald.quispe@hotmail.com',
+    date: '16/10/2021 02:00:00',
+    text: 'Me alegra'
+  },
+  {
+    _id: ObjectId("635704c7d4da9b3d06667c1e"),
+    author: 'Carlos.lazo@outlook.com',
+    date: '23/11/2021 03:00:00',
+    text: 'Cómo están?'
+  },
+  {
+    _id: ObjectId("635704c7d4da9b3d06667c1f"),
+    author: 'Andrea.leon@hotmail.com',
+    date: '06/12/2021 04:00:00',
+    text: 'Ya llegaron?'
+  },
+  {
+    _id: ObjectId("635704c7d4da9b3d06667c20"),
+    author: 'Gonzalo.llanto@gmail.com',
+    date: '04/01/2021 05:00:00',
+    text: 'Siguen conectados'
+  },
+  {
+    _id: ObjectId("635704c7d4da9b3d06667c21"),
+    author: 'Fernanda.ruiz@outlook.com',
+    date: '11/02/2021 06:00:00',
+    text: 'Los quiero ver'
+  },
+  {
+    _id: ObjectId("635704c7d4da9b3d06667c22"),
+    author: 'Carla.llanos@hotmail.com',
+    date: '12/03/2021 07:00:00',
+    text: 'Me alegra ver que siguen bien'
+  },
+  {
+    _id: ObjectId("635704c7d4da9b3d06667c23"),
+    author: 'Pia.toro@outlook.com',
+    date: '03/04/2021 08:00:00',
+    text: 'Quien quiere comprar algo'
+  },
+  {
+    _id: ObjectId("635704c7d4da9b3d06667c24"),
+    author: 'Pedro.cerda@hotmail.com',
+    date: '10/05/2021 09:00:00',
+    text: 'Me interesa el manga'
+  }
+]
+ecommerce> db.productos.estimatedDocumentCount()
+10
+ecommerce> db.mensajes.estimatedDocumentCount()
+10
+ecommerce> db.productos.insertOne({id: 11, title: 'Chihayafuru V11', price: 4430, thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V1_ngqiea.jpg'})
+{
+  acknowledged: true,
+  insertedId: ObjectId("63570971d4da9b3d06667c2f")
+}
+ecommerce> db.productos.find({price:{$lt:1000}})
+[
+  {
+    _id: ObjectId("63570863d4da9b3d06667c25"),
+    id: 1,
+    title: 'Chihayafuru V1',
+    price: 520,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V1_ngqiea.jpg'
+  },
+  {
+    _id: ObjectId("63570863d4da9b3d06667c26"),
+    id: 2,
+    title: 'Chihayafuru V2',
+    price: 810,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V2_p1t63f.jpg'
+  }
+]
+ecommerce> db.productos.find({$and:[{price:{$gte:1000}},{price:{$lte:3000}}]})
+[
+  {
+    _id: ObjectId("63570863d4da9b3d06667c27"),
+    id: 3,
+    title: 'Chihayafuru V3',
+    price: 1130,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V3_nb10yj.jpg'
+  },
+  {
+    _id: ObjectId("63570863d4da9b3d06667c28"),
+    id: 4,
+    title: 'Chihayafuru V4',
+    price: 2440,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1660682639/CHIHAYAFURU-V4_inljuh.jpg'
+  },
+  {
+    _id: ObjectId("63570863d4da9b3d06667c2a"),
+    id: 6,
+    title: 'Chihayafuru V6',
+    price: 1220,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V3_nb10yj.jpg'
+  },
+  {
+    _id: ObjectId("63570863d4da9b3d06667c2b"),
+    id: 7,
+    title: 'Chihayafuru V7',
+    price: 2110,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1660682639/CHIHAYAFURU-V4_inljuh.jpg'
+  }
+]
+ecommerce> db.productos.find({price:{$gt:3000}})
+[
+  {
+    _id: ObjectId("63570863d4da9b3d06667c29"),
+    id: 5,
+    title: 'Chihayafuru V5',
+    price: 3110,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V2_p1t63f.jpg'
+  },
+  {
+    _id: ObjectId("63570863d4da9b3d06667c2c"),
+    id: 8,
+    title: 'Chihayafuru V8',
+    price: 3800,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V2_p1t63f.jpg'
+  },
+  {
+    _id: ObjectId("63570863d4da9b3d06667c2d"),
+    id: 9,
+    title: 'Chihayafuru V9',
+    price: 4950,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V3_nb10yj.jpg'
+  },
+  {
+    _id: ObjectId("63570863d4da9b3d06667c2e"),
+    id: 10,
+    title: 'Chihayafuru V10',
+    price: 4670,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1660682639/CHIHAYAFURU-V4_inljuh.jpg'
+  },
+  {
+    _id: ObjectId("63570971d4da9b3d06667c2f"),
+    id: 11,
+    title: 'Chihayafuru V11',
+    price: 4430,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V1_ngqiea.jpg'
+  }
+]
+ecommerce> db.productos.find().sort({price:1}).skip(2).limit(1)
+[
+  {
+    _id: ObjectId("63570863d4da9b3d06667c27"),
+    id: 3,
+    title: 'Chihayafuru V3',
+    price: 1130,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V3_nb10yj.jpg'
+  }
+]
+ecommerce> db.productos.updateMany({},{$set:{stock:100}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 11,
+  modifiedCount: 11,
+  upsertedCount: 0
+}
+ecommerce> db.productos.updateMany({price:{$gt:4000}},{$set:{stock:0}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+ecommerce> db.productos.deleteMany({price:{$lt:1000}})
+{ acknowledged: true, deletedCount: 2 }
+ecommerce> db.productos.find().sort({price:1})
+[
+  {
+    _id: ObjectId("63570863d4da9b3d06667c27"),
+    id: 3,
+    title: 'Chihayafuru V3',
+    price: 1130,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V3_nb10yj.jpg',
+    stock: 100
+  },
+  {
+    _id: ObjectId("63570863d4da9b3d06667c2a"),
+    id: 6,
+    title: 'Chihayafuru V6',
+    price: 1220,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V3_nb10yj.jpg',
+    stock: 100
+  },
+  {
+    _id: ObjectId("63570863d4da9b3d06667c2b"),
+    id: 7,
+    title: 'Chihayafuru V7',
+    price: 2110,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1660682639/CHIHAYAFURU-V4_inljuh.jpg',
+    stock: 100
+  },
+  {
+    _id: ObjectId("63570863d4da9b3d06667c28"),
+    id: 4,
+    title: 'Chihayafuru V4',
+    price: 2440,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1660682639/CHIHAYAFURU-V4_inljuh.jpg',
+    stock: 100
+  },
+  {
+    _id: ObjectId("63570863d4da9b3d06667c29"),
+    id: 5,
+    title: 'Chihayafuru V5',
+    price: 3110,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V2_p1t63f.jpg',
+    stock: 100
+  },
+  {
+    _id: ObjectId("63570863d4da9b3d06667c2c"),
+    id: 8,
+    title: 'Chihayafuru V8',
+    price: 3800,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V2_p1t63f.jpg',
+    stock: 100
+  },
+  {
+    _id: ObjectId("63570971d4da9b3d06667c2f"),
+    id: 11,
+    title: 'Chihayafuru V11',
+    price: 4430,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V1_ngqiea.jpg',
+    stock: 0
+  },
+  {
+    _id: ObjectId("63570863d4da9b3d06667c2e"),
+    id: 10,
+    title: 'Chihayafuru V10',
+    price: 4670,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1660682639/CHIHAYAFURU-V4_inljuh.jpg',
+    stock: 0
+  },
+  {
+    _id: ObjectId("63570863d4da9b3d06667c2d"),
+    id: 9,
+    title: 'Chihayafuru V9',
+    price: 4950,
+    thumbnail: 'https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V3_nb10yj.jpg',
+    stock: 0
+  }
+]
+ecommerce> use admin
+switched to db admin
+admin> db.createUser({user:"pepe",pwd: "asd456",roles:[{role:"read", db:"ecommerce"}]})
+{ ok: 1 }
+admin> db.system.users.find()
+[
+  {
+    _id: 'admin.pepe',
+    userId: new UUID("709d5d35-881f-4e30-9201-a75528b7e08c"),
+    user: 'pepe',
+    db: 'admin',
+    credentials: {
+      'SCRAM-SHA-1': {
+        iterationCount: 10000,
+        salt: 'u15O9Nsepm4PE+9fKITSjg==',
+        storedKey: 'o8R9xdkaML2Rys3W1QHt2B/na+E=',
+        serverKey: 'XlDn20q75Ts+8PdSTQbCWmid+T0='
+      },
+      'SCRAM-SHA-256': {
+        iterationCount: 15000,
+        salt: 'pm4+Qc01Yh5mm5E+6hF08Y7mtdD06xKwMb2tCg==',
+        storedKey: 'Z5xZ02qC/LNegJZr03jvLDIoh/+PUHWSg+J+AM0Rk2Q=',
+        serverKey: 'CriM9bx0hGkNnV/yJiMQ0Xe0hLiBxC+xTabHxaa4sBo='
+      }
+    },
+    roles: [ { role: 'read', db: 'ecommerce' } ]
+  }
+]
+-----------------------
+Microsoft Windows [Versión 10.0.22000.1098]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+C:\Users\ana98>mongosh -u pepe -p asd456
+Current Mongosh Log ID: 63570e420aa6fa4b49bca86c
+Connecting to:          mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.0
+Using MongoDB:          6.0.2
+Using Mongosh:          1.6.0
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2022-10-24T13:04:19.426-05:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+------
+   Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+   metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+   The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+   and anyone you share the URL with. MongoDB may use this information to make product
+   improvements and to suggest MongoDB products and deployment options to you.
+
+   To enable free monitoring, run the following command: db.enableFreeMonitoring()
+   To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+------
+
+test> show collections
+
+test> show dbs
+admin      180.00 KiB
+config     108.00 KiB
+ecommerce  112.00 KiB
+empresas   112.00 KiB
+local       72.00 KiB
+
+
+
