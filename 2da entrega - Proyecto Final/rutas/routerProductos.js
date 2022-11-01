@@ -61,7 +61,7 @@ routerProductos.put("/:id", checkUser, async (req, res, next) => {
             const producto = await claseProductos.update(req.params.id, req.body);
             res.status(200).json(
                 producto !== null
-                ? {mensaje: `Se actualizó el producto con id: ${producto}`}
+                ? {mensaje: `Se actualizó el producto con id: ${req.params.id}`}
                 : { error: "no se pudo actualizar el producto" }
             );
         } else {
@@ -77,7 +77,7 @@ routerProductos.delete("/:id", checkUser, async (req, res, next) => {
             const producto = await claseProductos.deleteById(req.params.id);
             res.status(200).json(
                 producto !== null
-                    ? { mensaje: `El producto con el id: ${producto} fue eliminado` }
+                    ? { mensaje: `El producto con el id: ${req.params.id} fue eliminado` }
                     : { error: "El producto no fue encontrado" }
             );
     } catch (error) {
