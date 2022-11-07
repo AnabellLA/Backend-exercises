@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Chihayafuru V1",
+    "price": 120,
+    "thumbnail": "https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V1_ngqiea.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Chihayafuru V2",
+    "price": 110,
+    "thumbnail": "https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V2_p1t63f.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Chihayafuru V3",
+    "price": 130,
+    "thumbnail": "https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V3_nb10yj.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Chihayafuru V4",
+    "price": "130",
+    "thumbnail": "https://res.cloudinary.com/mangastore/image/upload/v1660682639/CHIHAYAFURU-V4_inljuh.jpg"
+  }
+]
