@@ -1,0 +1,25 @@
+    <div class="jumbotron">
+    <h1>¡Gracias por su compra!</h1>
+    <br>
+    <div class="table-responsive">
+            <h2>Aquí puede ver un resumen de su compra</h2>
+        <table class="table table-dark">
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Foto</th>
+            </tr>
+            {{#each productos}}
+            <tr>
+                <td>{{this.nombre}}</td>
+                <td>S/ {{this.precio}}</td>
+                <td><img width="50" src={{this.url}} alt="not found"></td>
+            </tr>
+            {{/each}}
+        </table>
+        <br>
+        <h2>Uno de nuestros agentes se comunicará pronto con usted</h2>
+        <br>
+        <button class="btn btn-danger my-5" onclick="location.href='/logout'">LOGOUT</button>
+    </div>
+</div>
