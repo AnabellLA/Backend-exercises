@@ -50,7 +50,7 @@ async function info(req, res) {
     res.render("info", datos);
 }
 async function random(req, res) {
-    const forked = fork(path.join('../capaServicio/calculo.js'))
+    const forked = fork(path.join('capaServicio/calculo.js'))
     //Se dejó en 100000 porque la computar no soportaba calcular más números
     const random = req.query.cant||100000
     forked.send(random)
