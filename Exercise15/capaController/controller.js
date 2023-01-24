@@ -57,6 +57,6 @@ async function random(req, res) {
     forked.on('message', msg =>{
         res.send(msg)
     });
-}
+};
 
 export { next, redirect, login, logout, loginError, register, registerError, info, random }
