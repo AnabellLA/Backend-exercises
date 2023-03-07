@@ -5,17 +5,13 @@ import hbs from "express-handlebars";
 import rutaNueva from "./capaRuteo/routers.js";
 import routerProductos from "./capaRuteo/routerProductos.js";
 import routerCarrito from "./capaRuteo/routerCarrito.js";
+import routerChat from "./capaRuteo/routerChat.js";
 import * as dotenv from 'dotenv'
 dotenv.config();
 import MongoStore from "connect-mongo";
 import yargs from "yargs";
-import { Server as IOServer } from "socket.io";
-import { Server as HttpServer } from "http";
-import { Socket } from "dgram";
 
 const app = express();
-const httpServer = new HttpServer(app);
-const io = new IOServer(httpServer);
 
 //servidor
 app.use(express.urlencoded({ extended: true }));
@@ -56,6 +52,7 @@ app.set("view engine", ".hbs");
 app.use(rutaNueva);
 app.use("/productos", routerProductos);
 app.use("/carritos", routerCarrito);
+app.use("/chat", routerChat);
 
 //servidor
 const args = yargs(process.argv.slice(2))
@@ -70,12 +67,7 @@ const args = yargs(process.argv.slice(2))
 	debug: false,
 }).argv;
 
-io.on("connection", (socket) => {
-	console.log("se conecto un usuario");
-});
-app.set("socketio", io);
-
-
+//Port connection
 const PORT = 8080 || parseInt(args.p)
 
 app.get("/datos", (req, res) => {

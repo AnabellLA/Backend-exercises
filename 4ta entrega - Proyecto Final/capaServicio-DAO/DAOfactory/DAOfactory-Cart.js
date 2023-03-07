@@ -1,4 +1,4 @@
-import Carrito from "./carrito.daos.class.js";
+import Carrito from "../carrito.daos.class.js";
 
 export default class MyConnectionFactory{
     returnDbConnection(){

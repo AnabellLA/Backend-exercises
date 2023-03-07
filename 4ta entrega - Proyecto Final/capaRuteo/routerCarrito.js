@@ -1,5 +1,5 @@
 import express from "express";
-import MyConnectionFactory from '../capaServicio-DAO/DAOfactory-Cart.js';
+import MyConnectionFactory from '../capaServicio-DAO/DAOfactory/DAOfactory-Cart.js';
 
 const routerCarrito = express.Router();
 const connection = new MyConnectionFactory();

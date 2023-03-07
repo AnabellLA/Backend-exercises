@@ -5,7 +5,7 @@ import bCrypt from "bcrypt";
 import mongoose from "mongoose";
 import nodemailer from 'nodemailer';
 import UsuariosSchema from "../capaPersistencia/usersModel.js";
-import MyConnectionFactory from '../capaServicio-DAO/DAOfactory-Product.js';
+import MyConnectionFactory from '../capaServicio-DAO/DAOfactory/DAOfactory-Product.js';
 import * as dotenv from 'dotenv'
 dotenv.config();
 //passport imports

@@ -1,5 +1,5 @@
 import express from "express";
-import MyConnectionFactory from '../capaServicio-DAO/DAOfactory-Product.js';
+import MyConnectionFactory from '../capaServicio-DAO/DAOfactory/DAOfactory-Product.js';
 
 const routerProductos = express.Router();
 const connection = new MyConnectionFactory();
@@ -9,8 +9,10 @@ routerProductos.use(handleErrors);
 
 routerProductos.get("/", async (req, res, next) => {
     try {
-        const productos = await claseProductos.getAll();
-        res.json(productos);
+        claseProductos.getAll().then(result => {
+            res.render('productos', {
+                hayProductos: result.length > 0,
+                productos: result})});
     } catch (error) {
         next(error);
     }
@@ -18,10 +20,10 @@ routerProductos.get("/", async (req, res, next) => {
 
 routerProductos.get("/:id", async (req, res, next) => {
     try {
-        const producto = await claseProductos.getById(req.params.id);
-        res.status(200).json(
-            producto ?? { error: "El producto no fue encontrado" }
-        );
+        claseProductos.getById(req.params.id).then(result => {
+            res.render('productos', {
+                hayProductos: result.length > 0,
+                productos: result})});
     } catch (error) {
         next(error);
     }

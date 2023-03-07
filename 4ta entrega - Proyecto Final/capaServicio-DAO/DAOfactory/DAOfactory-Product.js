@@ -1,4 +1,4 @@
-import Productos from "./productos.daos.class.js";
+import Productos from "../productos.daos.class.js";
 
 export default class MyConnectionFactory{
     returnDbConnection(){

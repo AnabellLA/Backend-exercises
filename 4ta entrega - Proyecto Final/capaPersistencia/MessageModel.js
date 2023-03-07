@@ -7,6 +7,6 @@ const messagesSchema = new Schema({
         message: { type: String, required: true, max: 400 }
 });
 
-const MessageModel = model("Usuarios", messagesSchema);
+const MessageModel = model("Mensajes", messagesSchema);
 
 export default MessageModel;
