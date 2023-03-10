@@ -1,7 +1,8 @@
-const socket = io.connect();
+var socket = io.connect("http://localhost:8080", { forceNew: true });
 
 socket.on("messages", (dataMessages) => {
 	renderMessage(dataMessages);
+	console.log(dataMessages)
 });
 
 function renderMessage(dataMessages) {

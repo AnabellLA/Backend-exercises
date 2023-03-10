@@ -5,13 +5,22 @@ import hbs from "express-handlebars";
 import rutaNueva from "./capaRuteo/routers.js";
 import routerProductos from "./capaRuteo/routerProductos.js";
 import routerCarrito from "./capaRuteo/routerCarrito.js";
-import routerChat from "./capaRuteo/routerChat.js";
 import * as dotenv from 'dotenv'
 dotenv.config();
 import MongoStore from "connect-mongo";
-import yargs from "yargs";
+import yargs from "yargs";import MyConnectionFactory from './capaServicio-DAO/DAOfactory/DAOfactory-Chat.js';
+import { Server as IOServer } from "socket.io";
+import { Server as HttpServer } from "http";
+import { login } from "./capaController/controller.js";
 
 const app = express();
+
+//io
+const httpServer = new HttpServer(app);
+const io = new IOServer(httpServer);
+const connection = new MyConnectionFactory();
+const getAllChat = connection.returnDbConnection();
+const getByMailChat = connection.returnDbConnection();
 
 //servidor
 app.use(express.urlencoded({ extended: true }));
@@ -52,7 +61,43 @@ app.set("view engine", ".hbs");
 app.use(rutaNueva);
 app.use("/productos", routerProductos);
 app.use("/carritos", routerCarrito);
-app.use("/chat", routerChat);
+
+
+//SOCKET IO
+app.get("/",(req, res) => {
+	res.redirect("/login")
+})
+app.get("/chat", (req, res) => {
+	getAllChat.getAll().then( result => 
+		io.on("connection", (socket) => {
+			console.log("nuevo cliente conectado");
+			socket.emit("messages", result);
+			socket.on("new-message", (message) => {
+				if (message.email.length > 0){
+					getAllChat.Save(message);
+					io.sockets.emit("messages", result);
+				}
+			});
+		})
+	),
+    res.sendFile("index.html", {root: "./public/"})
+});
+
+app.get("/chat/:email", (req, res) => {
+	getByMailChat.getByEmail(req.params.email).then( result => 
+        io.on("connection", (socket) => {
+            console.log("nuevo cliente conectado");
+            socket.emit("messages", result);
+            socket.on("new-message", (message) => {
+                if (message.email.length > 0){
+                    getByMailChat.Save(message);
+                    io.sockets.emit("messages", result);
+                }
+            });
+        })
+    ),
+	res.sendFile("index.html", {root: "./public/"});
+});
 
 //servidor
 const args = yargs(process.argv.slice(2))

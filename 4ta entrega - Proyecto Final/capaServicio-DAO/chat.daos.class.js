@@ -11,7 +11,7 @@ class Chat {
     async getAll() {
         try {
             await this.mongodb(this.url)
-            return await MessageModel.find({email:0, userType:0, timestamp:0, message:1}).lean()
+            return await MessageModel.find().lean()
         } catch (error) {
             console.log(error);
         }
@@ -20,7 +20,7 @@ class Chat {
     async getByEmail(email) {
         try {
             await this.mongodb(this.url)
-            return await MessageModel.find({email: email}, {email:0, userType:0, timestamp:0, message:1}).lean()
+            return await MessageModel.find({email: email}).lean()
         } catch (error) {
             console.log(error);
         }
