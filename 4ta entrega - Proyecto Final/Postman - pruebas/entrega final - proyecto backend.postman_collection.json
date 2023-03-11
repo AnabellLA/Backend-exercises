@@ -1,0 +1,309 @@
+{
+	"info": {
+		"_postman_id": "a3d2f3ea-682b-4b28-9ca0-72970a79ee13",
+		"name": "entrega final - proyecto backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23265545"
+	},
+	"item": [
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "productos by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/productos/63603f2ec7be5fce1b2992fa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"productos",
+								"63603f2ec7be5fce1b2992fa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "producto nuevo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Chihayafuru - Volumen 4\",\r\n    \"descripcion\": \"Volumen número 4 del manga Chihayafuru\",\r\n    \"codigo\": \"CHIV4\",\r\n    \"url\": \"https://res.cloudinary.com/mangastore/image/upload/v1660682639/CHIHAYAFURU-V4_inljuh.jpg\",\r\n    \"precio\": 200,\r\n    \"stock\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "productos by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Chihayafuru - Volumen 3\",\r\n    \"descripcion\": \"Volumen número 3 del manga Chihayafuru\",\r\n    \"codigo\": \"CHIV3\",\r\n    \"url\": \"https://res.cloudinary.com/mangastore/image/upload/v1657757547/CHIHAYAFURU-V3_nb10yj.jpg\",\r\n    \"precio\": 220,\r\n    \"stock\": 30\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/productos/640bcc54f0a3738a92fa46a2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"productos",
+								"640bcc54f0a3738a92fa46a2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "productos by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/productos/640bccb5f0a3738a92fa46a6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"productos",
+								"640bccb5f0a3738a92fa46a6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carrito",
+			"item": [
+				{
+					"name": "Carrito",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/carritos/636079b70f1008ea1dd467ca/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"carritos",
+								"636079b70f1008ea1dd467ca",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Carrito - pedido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/carritos/636079b70f1008ea1dd467ca/pedido",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"carritos",
+								"636079b70f1008ea1dd467ca",
+								"pedido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Carrito nuevo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/carritos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"carritos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Nuevo producto en el carrito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n\"nombre\":\"Monster - Volumen 1\",\r\n\"descripcion\":\"Volumen número 1 del manga Monster\",\r\n\"codigo\":\"MONV1\",\r\n\"url\":\"https://res.cloudinary.com/mangastore/image/upload/v1658885585/Monster-V1_jids00.jpg\",\r\n\"precio\":150,\r\n\"stock\":200,\r\n\"timeStamp\":\"2022-10-31T21:33:34.863+00:00\",\r\n\"_id\":\"63605f7f075437da72df86cc\",\r\n\"cantidad\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/carritos/640bce184c6ce4ffcac2fb08/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"carritos",
+								"640bce184c6ce4ffcac2fb08",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Carrito",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n\"nombre\":\"Monster - Volumen 1\",\r\n\"descripcion\":\"Volumen número 1 del manga Monster\",\r\n\"codigo\":\"MONV1\",\r\n\"url\":\"https://res.cloudinary.com/mangastore/image/upload/v1658885585/Monster-V1_jids00.jpg\",\r\n\"precio\":150,\r\n\"stock\":200,\r\n\"timeStamp\":\"2022-10-31T21:33:34.863+00:00\",\r\n\"_id\":\"63605f7f075437da72df86cc\",\r\n\"cantidad\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/carritos/640bcf514c6ce4ffcac2fb0e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"carritos",
+								"640bcf514c6ce4ffcac2fb0e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Producto en el carrito",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n\"nombre\":\"Monster - Volumen 1\",\r\n\"descripcion\":\"Volumen número 1 del manga Monster\",\r\n\"codigo\":\"MONV1\",\r\n\"url\":\"https://res.cloudinary.com/mangastore/image/upload/v1658885585/Monster-V1_jids00.jpg\",\r\n\"precio\":150,\r\n\"stock\":200,\r\n\"timeStamp\":\"2022-10-31T21:33:34.863+00:00\",\r\n\"_id\":\"63605f7f075437da72df86cc\",\r\n\"cantidad\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/carritos/640bce184c6ce4ffcac2fb08/productos/63605f7f075437da72df86cc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"carritos",
+								"640bce184c6ce4ffcac2fb08",
+								"productos",
+								"63605f7f075437da72df86cc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
