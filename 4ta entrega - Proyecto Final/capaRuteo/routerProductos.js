@@ -20,10 +20,10 @@ routerProductos.get("/", async (req, res, next) => {
 
 routerProductos.get("/:id", async (req, res, next) => {
     try {
-        claseProductos.getById(req.params.id).then(result => {
-            res.render('productos', {
-                hayProductos: result.length > 0,
-                productos: result})});
+        const producto = await claseProductos.getById(req.params.id);
+        res.status(200).json(
+            producto ?? { error: "El producto no fue encontrado" }
+        );
     } catch (error) {
         next(error);
     }
@@ -31,9 +31,10 @@ routerProductos.get("/:id", async (req, res, next) => {
 
 routerProductos.post("/", async (req, res, next) => {
     try {
+        console.log(req.body);
         if (
-            req.body.title &&
-            !Number.isNaN(req.body.price) &&
+            req.body.nombre &&
+            !Number.isNaN(req.body.precio) &&
             req.body.codigo &&
             !Number.isNaN(req.body.stock)
         ) {
@@ -55,8 +56,8 @@ routerProductos.post("/", async (req, res, next) => {
 routerProductos.put("/:id", async (req, res, next) => {
     try {
         if (
-            req.body.title &&
-            !Number.isNaN(req.body.price) &&
+            req.body.nombre &&
+            !Number.isNaN(req.body.precio) &&
             req.body.codigo &&
             !Number.isNaN(req.body.stock)
         ) {

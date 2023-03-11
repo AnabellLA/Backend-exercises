@@ -16,6 +16,13 @@ class User {
             console.log(error);
         }
     }
+
+    static returnSingleton() {
+        if(!this.instance){
+            this.instance = new User()
+        }
+        return this.instance
+    }
 }
 
-export default User ;
+export default User;

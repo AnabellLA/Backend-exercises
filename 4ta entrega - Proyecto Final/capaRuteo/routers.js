@@ -6,6 +6,7 @@ import mongoose from "mongoose";
 import nodemailer from 'nodemailer';
 import UsuariosSchema from "../capaPersistencia/usersModel.js";
 import MyConnectionFactory from '../capaServicio-DAO/DAOfactory/DAOfactory-Product.js';
+import MyConnectionFactoryUser from '../capaServicio-DAO/DAOfactory/DAOfactory-User.js'
 import * as dotenv from 'dotenv'
 dotenv.config();
 //passport imports
@@ -13,8 +14,10 @@ import passport from "passport";
 import { Strategy } from "passport-local";
 
 const rutaNueva = new Router();
-const connection = new MyConnectionFactory();
-const claseProductos = connection.returnDbConnection();
+const connectionProd = new MyConnectionFactory();
+const connectionUser = new MyConnectionFactoryUser();
+const claseProductos = connectionProd.returnDbConnection();
+const claseUsuario = connectionUser.returnDbConnection();
 
 rutaNueva.use(compression());
 
@@ -145,14 +148,16 @@ rutaNueva.post(
 	passport.authenticate("login", {
 		failureRedirect: "/login-error",
 	}), function (req, res){
-		claseProductos.getAll().then(result => {
-			console.log(result),
-			res.render("datos", {
-				avatar: resultUser.avatar,
-				name: resultUser.name,
-				username: req.body.username,
-				hayProductos: result.length > 0,
-				productos: result})});
+		claseUsuario.getByMail(req.body.username).then(resultUser =>{
+			claseProductos.getAll().then(result => {
+				res.render('datos', {
+					avatar: resultUser.avatar,
+					name: resultUser.name,
+					username: req.body.username,
+					hayProductos: result.length > 0,
+					productos: result})});
+		})
+		;
 	}
 );
 
